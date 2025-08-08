@@ -1,23 +1,26 @@
 package com.pooja.entity;
-
-//import com.pooja.model.City;
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
 
+import java.time.LocalDateTime;
+
 @Entity
-@Table(name = "movies")
+@Table(name = "bookings")
 @Data
 @NoArgsConstructor
 @AllArgsConstructor
-public class Movie {
+public class Booking {
     @Id
     private String id;
-    private String title;
-    private String genre;
-    private int duration;
+
+
+    private String userName;
+    private LocalDateTime bookingTime;
+
+    @ManyToOne
+    @JoinColumn(name = "movie_id", referencedColumnName = "id")
+    private Movie movie;
 }

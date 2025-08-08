@@ -57,8 +57,7 @@ public class MovieServiceImpl implements MovieService {
 
     @Override
     public Movie updateMovie(String id, Movie movie) {
-//        movie = repo.findById(id);
-//        com.pooja.entity.Movie movieEntity = convertModel2Entity(movie);
+
 
         if(repo.existsById(id)){
             repo.save(convertModel2Entity(movie));
