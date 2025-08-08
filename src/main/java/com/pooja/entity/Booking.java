@@ -15,12 +15,12 @@ import java.time.LocalDateTime;
 public class Booking {
     @Id
     private String id;
-    
+
 
     private String userName;
     private LocalDateTime bookingTime;
 
     @ManyToOne
     @JoinColumn(name = "movie_id", referencedColumnName = "id")
-    private Movie movie;  // foreign key reference
+    private Movie movie;
 }

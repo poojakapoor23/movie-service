@@ -26,6 +26,6 @@ public class Booking {
 //    @Max(value = 500, message = "Seating capacity should be at most 500")
     @ManyToOne
     @JoinColumn(name = "movie_id", referencedColumnName = "id")
-    private Movie movie;  // foreign key reference
+    private Movie movie;
 }
 

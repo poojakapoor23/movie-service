@@ -2,6 +2,7 @@ package com.pooja.service.impl;
 
 import com.pooja.model.Booking;
 //import com.pooja.model.Movie;
+import com.pooja.model.Movie;
 import com.pooja.repository.BookingRepository;
 import com.pooja.repository.MovieRepository;
 import com.pooja.service.BookingService;
@@ -56,14 +57,17 @@ public class BookingServiceImpl implements BookingService {
         return List.of();
     }
 
-    @Override
     public Booking updateBooking(String id, Booking booking) {
+
+        if(repo.existsById(id)){
+            repo.save(convertModeltoEntity(booking));
+            return booking;
+        }
         return null;
     }
-
     @Override
     public void deleteBooking(String id) {
-
+        repo.deleteById(id);
     }
 
     @Override

@@ -3,13 +3,16 @@ package  com.pooja.model;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
+import jakarta.persistence.*;
 
 @Data
 @NoArgsConstructor
 @AllArgsConstructor
 public class Movie {
 
-    private String id;
+      @Id
+      @GeneratedValue(strategy = GenerationType.IDENTITY)
+       private String id;
 
 //    @NotBlank(message = "Name is required")
 //    @Size(min = 2, max = 50, message = "Name should be between 2 and 50 characters")
