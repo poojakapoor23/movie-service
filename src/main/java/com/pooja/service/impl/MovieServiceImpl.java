@@ -67,6 +67,7 @@ public class MovieServiceImpl implements MovieService {
     }
     @Override
     public void deleteMovie(String id) {
+
         repo.deleteById(id);
     }
 
